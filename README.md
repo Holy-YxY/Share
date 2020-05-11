@@ -1,5 +1,6 @@
 # Share
-========
+
+ English | [简体中文](./README-CN.md)
  
 $Share will go some way to addressing the need for usb sticks in some scenarios
  
