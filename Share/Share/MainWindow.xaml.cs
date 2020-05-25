@@ -20,9 +20,59 @@ namespace Share
     /// </summary>
     public partial class MainWindow : Window
     {
+        private 
+            bool block = false;
         public MainWindow()
         {
             InitializeComponent();
+            initList();
+        }
+
+        private void SettingButton_Click(object sender, RoutedEventArgs e)
+        {
+            ComboBox setComboBox = new ComboBox(); 
+
+        }
+
+        private void LockButton_Click(object sender, RoutedEventArgs e)
+        {
+            BitmapImage lkBitmapImage = new BitmapImage();
+            lkBitmapImage.BeginInit();
+            if(block)
+            {
+                lkBitmapImage.UriSource = new Uri("./Image/Unlocked.ico", UriKind.Relative);
+                block = false;
+            }
+            else
+            {
+                lkBitmapImage.UriSource = new Uri("/Image/Locked.ico", UriKind.Relative);
+                block = true;
+            }
+            lkBitmapImage.EndInit();
+            lkImage.Source = lkBitmapImage;
+        }
+        //鼠标拖拽窗体
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            
+　　        if (e.LeftButton == MouseButtonState.Pressed)
+　　        {
+　　　　        if (!block)
+ 　　　　       {
+　　　　　           this.DragMove();
+　              }
+
+            }
+        }
+
+        public void initList()
+        {
+            for (int i = 0; i < 30; i++)
+            {
+                olList.Items.Add(new { N = "1" + i, ID = "YxY", File = "text", Size = "1KB", Date = "2020"});
+                sendList.Items.Add(new { N = "1" + i, File = "text", Size = "1KB", Date = "2020" });
+            }
         }
     }
 }

@@ -94,5 +94,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\setting.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Unlocked.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Locked.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
