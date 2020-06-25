@@ -9,6 +9,8 @@ Look how easy it is to use:
     import project
     # Get your stuff done
     project.do_stuff()
+
+ ![效果和部分功能](https://github.com/Holy-YxY/Share/blob/master/doc/Demo.png)
  
 Features
 --------
