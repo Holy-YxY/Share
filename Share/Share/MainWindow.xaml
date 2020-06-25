@@ -5,11 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Share"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="600" AllowsTransparency="False" WindowStyle="None" ResizeMode="NoResize">
-
+        Title="MainWindow" Height="450"  Width="600" AllowsTransparency="True" WindowStyle="None"  ResizeMode="NoResize" Name="window" Visibility="Visible" Background="YellowGreen"  Foreground="Black"
+        KeyDown="PreviewKeyDown"
+        >
+        
+    
     <Grid>
         <Grid Margin="0,0,0,430">
-            <StackPanel Orientation="Horizontal">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="461*"/>
+                <ColumnDefinition Width="132*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Margin="0,0,-0.4,0">
                 <Button Margin="540,0,0,0" Background="Transparent" Click="SettingButton_Click" BorderBrush="#00884040">
                     <Image Name="setImage" Source="Image/setting.ico"></Image>
                 </Button>
@@ -18,11 +25,11 @@
                 </Button>
             </StackPanel>
         </Grid>
-        <Grid Margin="0,20,0,0">
-            <DockPanel LastChildFill="True">
-                <Grid DockPanel.Dock="Left" Margin="0,0,-310,0">
-                    <StackPanel Orientation="Vertical">
-                        <ListView Name="olList" Margin="0" MaxWidth="296" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" MaxHeight="368" Width="297">
+        <Grid Margin="0,20,0,0" Name="test">
+            <DockPanel LastChildFill="True" Name="test1">
+                <Grid DockPanel.Dock="Left" Margin="0,0,-310,0" Name="test2">
+                    <StackPanel Orientation="Vertical" Name="test3">
+                        <ListView Name="olList" Margin="7,0,6.4,0" MaxWidth="296" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" MaxHeight="368" Width="297" Height="365" Background="YellowGreen">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn Header="N" Width="40" DisplayMemberBinding="{Binding N}"></GridViewColumn>
@@ -35,16 +42,16 @@
                         </ListView>
                         <StackPanel Orientation="Horizontal">
                             <Label>
-                                
+
                             </Label>
                             <Label>
-                                
+
                             </Label>
                             <Label>
-                                
+
                             </Label>
                             <Label>
-                                
+
                             </Label>
                         </StackPanel>
                     </StackPanel>
@@ -52,20 +59,20 @@
                 <Grid DockPanel.Dock="Right" Margin="310,0,0,-0.4">
                     <StackPanel Orientation="Vertical">
                         <StackPanel Margin="0,0,0,-290">
-                            <ListView Name="sendList" MaxHeight="289" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                            <ListView Name="sendList" MaxHeight="289" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="289" Margin="0,0,-0.4,0" AllowDrop="True" Drop="SendList_Drop" Background="YellowGreen">
                                 <ListView.View>
                                     <GridView>
-                                        <GridViewColumn Header="N" Width="40" DisplayMemberBinding="{Binding N}"></GridViewColumn>
-                                        <GridViewColumn Header="File" Width="90" DisplayMemberBinding="{Binding File}"></GridViewColumn>
-                                        <GridViewColumn Header="Size" Width="40" DisplayMemberBinding="{Binding Size}"></GridViewColumn>
-                                        <GridViewColumn Header="Date" Width="70" DisplayMemberBinding="{Binding Date}"></GridViewColumn>
+                                        <GridViewColumn Header="N" Width="20" DisplayMemberBinding="{Binding N}"></GridViewColumn>
+                                        <GridViewColumn Header="File" Width="100" DisplayMemberBinding="{Binding File}"></GridViewColumn>
+                                        <GridViewColumn Header="Size" Width="60" DisplayMemberBinding="{Binding Size}"></GridViewColumn>
+                                        <GridViewColumn Header="Date" Width="85" DisplayMemberBinding="{Binding Date}"></GridViewColumn>
                                     </GridView>
                                 </ListView.View>
                             </ListView>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,290,0,-55">
                             <Label Margin="50,8,30,8"  Content="ID:" FontSize="30"></Label>
-                            <TextBox Margin="0,8,-127,8"></TextBox>
+                            <TextBox Name="ID" Margin="0,8,-127,8"></TextBox>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,63,0,-127">
                             <Label Content="PassWord:" FontSize="20" Margin="15,13,5,13"></Label>
